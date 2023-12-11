@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 37
+  controlID: 41
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 363.19995
     height: 722.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 38
+  controlID: 42
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 39
+  controlID: 43
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -322,7 +322,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -330,17 +330,17 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\fanny\OneDrive\Documents\Game Development\Game\Phantom
     Hunter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: d4400000
-    m_LastClickedID: 16596
-    m_ExpandedIDs: 00000000d4400000144100008041000010420000688400006c84000070840000ae900000e8b50000ecb50000f0b50000ceb8000000ca9a3b
+    scrollPos: {x: 0, y: 31.400024}
+    m_SelectedIDs: e65b0000
+    m_LastClickedID: 23526
+    m_ExpandedIDs: 00000000da5b0000e25b0000e45b0000e65b0000e85b0000ec5b00001a5d0000245d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -368,7 +368,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000da5b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -423,7 +423,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 207
+  m_DirectoriesAreaWidth: 206
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -512,21 +512,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3e0dfeff1813feff8a1dfeff4297feffe097feff92b4feffced4feff1ad8feff34dafefff4defeff30dffeff3ee4feffb809ffff5c0effff082bffffca8100002cbd000032bd00006ebd0000
+      m_ExpandedIDs: 7e53feffca56feffe258feff3459feff485cfeff125efefff45efeffb861feff7e2fffff6435ffff3437ffff8439ffff603affffd03affffa240ffff9c47ffff064affff5c4cffffbe4fffffc84fffffd64fffff3e53ffff4c53ffff2e54ffff6e59ffffdc5affffc05bffff1a5cffff485effff9e5effffec5fffff3e60ffff527cffff9a7cffff407effff907effffe07effff347fffffc47fffffe68fffffb290ffff0295ffffe095ffff0a9affffc69bffffbc9cffff929fffff70a0ffffe6b1ffffe4cbffffb2d5ffff92d6ffffced6ffffc6dcffff14deffffd2dfffffaaecffff04edffff42edffff0afbffffa65e0000be5e000034690000646900002a730000da78000064820000a0820000fe8400000a860000188700002488000030890000868b0000128f00001c9000004290000058900000889200009e9200008a940000c69400002a970000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Hit_01
-        m_OriginalName: Hit_01
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -132424
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -575,8 +575,8 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -170.4, y: -26.399994}
-      snapOffsetDelta: {x: 0.000030517578, y: 0}
+      snapOffset: {x: -170.39996, y: -26.399994}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -796,7 +796,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 0
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Particles
@@ -887,10 +887,23 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 48, y: 10.399994}
+      snapOffset: {x: 48, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: UnityEditor.SceneViewCameraOverlay
+      index: 9
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: -217.59998, y: -301.6}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 3
+      id: AINavigationOverlay
       index: 8
       layout: 4
       size: {x: 0, y: 0}
@@ -906,9 +919,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.3927853, y: 0.5176165, z: 0.47764838}
+    m_Target: {x: 1.402, y: 0.5109999, z: 3.436}
     speed: 2
-    m_Value: {x: 1.3927853, y: 0.5176165, z: 0.47764838}
+    m_Value: {x: 1.402, y: 0.5109999, z: 3.436}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -954,13 +967,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.08837405, y: 0.78069323, z: -0.11345247, w: 0.608157}
+    m_Target: {x: 0.18057686, y: -0.050144386, z: 0.009213994, w: 0.98225003}
     speed: 2
-    m_Value: {x: 0.08837325, y: 0.78068614, z: -0.11345144, w: 0.6081515}
+    m_Value: {x: 0.18057483, y: -0.050143823, z: 0.009213891, w: 0.982239}
   m_Size:
-    m_Target: 1.3898231
+    m_Target: 6.97699
     speed: 2
-    m_Value: 1.3898231
+    m_Value: 6.97699
   m_Ortho:
     m_Target: 0
     speed: 2
