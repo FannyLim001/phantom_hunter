@@ -9,10 +9,12 @@ public class Gun : MonoBehaviour
 
     public Camera fpscam;
     public ParticleSystem shootEffect;
+    public AudioSource shootSound;
 
     public void Shoot()
     {
         shootEffect.Play();
+        shootSound.Play();
 
         RaycastHit hit;
         if(Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))

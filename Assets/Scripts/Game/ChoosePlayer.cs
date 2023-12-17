@@ -18,6 +18,9 @@ public class ChoosePlayer : MonoBehaviour
 
     public void ChooseFemaleMC()
     {
-
+        PlayerGender = "Female";
+        PlayerPrefs.SetString("CharacterGender", PlayerGender);
+        // Load the "Game" scene
+        SceneManager.LoadScene("Game");
     }
 }
