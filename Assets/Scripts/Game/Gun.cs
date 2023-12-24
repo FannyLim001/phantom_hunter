@@ -22,9 +22,14 @@ public class Gun : MonoBehaviour
             Debug.Log(hit.transform.name);
 
             NormalTarget normalTarget = hit.transform.GetComponent<NormalTarget>();
+            BossTarget bossTarget = hit.transform.GetComponent<BossTarget>();
             if (normalTarget!=null)
             {
                 normalTarget.TakeDamage(damage);
+            }
+            if (bossTarget != null)
+            {
+                bossTarget.TakeDamage(damage);
             }
         }
     }

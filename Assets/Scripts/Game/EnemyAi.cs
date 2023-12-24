@@ -24,6 +24,10 @@ public class EnemyAi : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    public bool isBossEnemy;
+    public int normalDamage = 5;
+    public int bossDamage = 15;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -93,8 +97,9 @@ public class EnemyAi : MonoBehaviour
 
             if (playerHealth != null)
             {
-                // Apply damage to the player
-                playerHealth.TakeDamage(5);
+                // Apply damage based on enemy type
+                int damage = isBossEnemy ? bossDamage : normalDamage;
+                playerHealth.TakeDamage(damage);
             }
             else
             {

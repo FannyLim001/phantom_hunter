@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,11 +14,19 @@ public class GameManager : MonoBehaviour
     public GameObject MaleMC;
     public GameObject FemaleMC;
     public GameObject Enemy;
+    public GameObject Boss;
     public GameObject NormalEnemy;
+    public GameObject BossEnemy;
     public GameObject PauseMenu;
     public GameObject GameOverMenu;
+    public TMP_Text timer;
+    public float elapsedTime;
 
-    private float minX, maxX;
+    public AudioSource normalMusic;
+    public AudioSource bossMusic;
+
+    private GameObject playerInstance;
+    private bool bossSpawn = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -27,54 +36,52 @@ public class GameManager : MonoBehaviour
         BGMusic.instance.GetComponent<AudioSource>().Stop();
 
         string characterGender = PlayerPrefs.GetString("CharacterGender");
-        if(characterGender == "Male")
-        {
-            GameObject maleMCInstance = Instantiate(MaleMC);
 
-            // Set the instantiated MaleMC as a child of the Player
-            maleMCInstance.transform.SetParent(Player.transform);
-        } else if(characterGender == "Female")
+        if (characterGender == "Male")
         {
-            GameObject femaleMCInstance = Instantiate(FemaleMC);
-
-            // Set the instantiated Female as a child of the Player
-            femaleMCInstance.transform.SetParent(Player.transform);
+            playerInstance = Instantiate(MaleMC);
+        }
+        else if (characterGender == "Female")
+        {
+            playerInstance = Instantiate(FemaleMC);
         }
 
-        TerrainCollider terrainCollider = Enemy.GetComponent<TerrainCollider>();
+        // Set the instantiated as a child of the Player
+        playerInstance.transform.SetParent(Player.transform);
 
-        if (terrainCollider != null)
+        // Reset local position to zero (optional, depending on your needs)
+        playerInstance.transform.localPosition = Vector3.zero;
+
+        for (int i = 0; i < totalNormalEnemy; i++)
         {
-            Bounds terrainBounds = terrainCollider.bounds;
+            GameObject normalEnemyInstance = Instantiate(NormalEnemy);
 
-            // Set the range for X positions based on the terrain bounds
-            float minX = terrainBounds.min.x;
-            float maxX = terrainBounds.max.x;
-
-            for (int i = 0; i < totalNormalEnemy; i++)
-            {
-                GameObject normalEnemyInstance = Instantiate(NormalEnemy);
-
-                // Set the enemy's position to a random position within the specified range
-                float randomX = Random.Range(minX, maxX);
-
-                normalEnemyInstance.transform.position = new Vector3(randomX, 0, 0);
-
-                normalEnemyInstance.transform.SetParent(Enemy.transform);
-            }
+            normalEnemyInstance.transform.SetParent(Enemy.transform);
+            normalEnemyInstance.transform.localPosition = new Vector3 (2, 2.5f, 0);
         }
-        else
-        {
-            Debug.LogError("TerrainCollider not found on the Enemy GameObject.");
-        }
-
     }
 
-    // Update is called once per frame
     void Start()
     {
         PauseMenu.SetActive(false);
         GameOverMenu.SetActive(false);
+    }
+
+    void Update()
+    {
+        elapsedTime += Time.deltaTime;
+        int minutes = Mathf.FloorToInt(elapsedTime / 60);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+        timer.text = string.Format("{0:00}:{1:00}",minutes,seconds);
+
+        if (Enemy.transform.childCount == 0 && !bossSpawn)
+        {
+            normalMusic.Stop();
+            bossMusic.Play();
+            bossSpawn = true;
+            GameObject bossEnemyInstance = Instantiate(BossEnemy);
+            bossEnemyInstance.transform.SetParent(Boss.transform);
+        }
     }
 
     public void Pause()
@@ -91,13 +98,17 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        bossSpawn = false;
+
         // Get the index of the current scene
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         // Reload the current scene
         SceneManager.LoadScene(currentSceneIndex);
+
         Time.timeScale = 1;
     }
+
 
     public void Exit()
     {
