@@ -31,7 +31,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3fe85b1bd5d01484fb00dd430756ea95,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fe85b1bd5d01484fb00dd430756ea95,
         type: 3}
@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  enemyDie: 0
 --- !u!195 &8351779070744303741
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -163,7 +162,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 6
+  m_Speed: 3
   m_Acceleration: 12
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -201,6 +200,9 @@ MonoBehaviour:
   attackRange: 1.1
   playerInSightRange: 0
   playerInAttackRange: 0
+  isBossEnemy: 0
+  normalDamage: 5
+  bossDamage: 15
 --- !u!82 &2073163633318431005
 AudioSource:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     private GameManager gameManager;
     public AudioSource hurtAudio;
     public HealthBar healthBar;
+    public GameObject hurtPanel;
 
     void Start()
     {
@@ -24,6 +25,8 @@ public class PlayerHealth : MonoBehaviour
             Debug.LogError("GameManager not found.");
         }
 
+        hurtPanel.SetActive(false);
+
         currentHealth = maxHealth; // Set the initial health to the maximum health
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -32,6 +35,10 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         hurtAudio.Play();
+
+        hurtPanel.SetActive(true);
+
+        Invoke("HideHurtPanel", 2f);
 
         currentHealth -= damageAmount;
         healthBar.SetHealth(currentHealth);
@@ -43,6 +50,11 @@ public class PlayerHealth : MonoBehaviour
         }
 
         Debug.Log(currentHealth);
+    }
+
+    private void HideHurtPanel()
+    {
+        hurtPanel.SetActive(false);
     }
 
     // Method to handle player death

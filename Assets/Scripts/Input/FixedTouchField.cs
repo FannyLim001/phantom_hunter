@@ -12,10 +12,8 @@ public class FixedTouchField : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     [HideInInspector]
     public bool Pressed;
 
-    void Start()
-    {
-
-    }
+    // Adjust this sensitivity factor to control how much the TouchDist changes per frame
+    public float sensitivity = 0.01f;
 
     void Update()
     {
@@ -23,18 +21,18 @@ public class FixedTouchField : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         {
             if (PointerId >= 0 && PointerId < Input.touches.Length)
             {
-                TouchDist = Input.touches[PointerId].position - PointerOld;
+                TouchDist = (Input.touches[PointerId].position - PointerOld) * sensitivity;
                 PointerOld = Input.touches[PointerId].position;
             }
             else
             {
-                TouchDist = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - PointerOld;
+                TouchDist = (new Vector2(Input.mousePosition.x, Input.mousePosition.y) - PointerOld) * sensitivity;
                 PointerOld = Input.mousePosition;
             }
         }
         else
         {
-            TouchDist = new Vector2();
+            TouchDist = Vector2.zero;
         }
     }
 
@@ -45,10 +43,8 @@ public class FixedTouchField : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         PointerOld = eventData.position;
     }
 
-
     public void OnPointerUp(PointerEventData eventData)
     {
         Pressed = false;
     }
-    
 }
